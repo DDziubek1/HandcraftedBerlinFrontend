@@ -13,7 +13,7 @@ const Cart = () => {
             const cartListingsData = await Promise.all(
                 cart.map(async (listingId) => {
                     try {
-                        const response = await axios.get(`http://localhost:3000/products/${listingId}`);
+                        const response = await axios.get(`https://handcraftedberlinbackend.onrender.com/products/${listingId}`);
                         return response.data;
                     } catch (error) {
                         console.error(`Error fetching listing with ID ${listingId}:`, error);

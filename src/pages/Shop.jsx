@@ -12,7 +12,7 @@ const Shop = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/products');
+                const response = await axios.get('https://handcraftedberlinbackend.onrender.com/products');
                 const productsData = response.data;
                 setProducts(productsData);
                 console.log('Products:', productsData);
@@ -27,7 +27,7 @@ const Shop = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/categories');
+                const response = await axios.get('https://handcraftedberlinbackend.onrender.com/categories');
                 const categoriesData = response.data;
                 setCategories(categoriesData);
                 console.log('Categories:', categoriesData);

@@ -13,7 +13,7 @@ const Home = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/products');
+                const response = await axios.get('https://handcraftedberlinbackend.onrender.com/products');
                 const productsData = response.data;
                 setProducts(productsData);
                 console.log('Products:', productsData);
@@ -24,7 +24,7 @@ const Home = () => {
 
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/users');
+                const response = await axios.get('https://handcraftedberlinbackend.onrender.com/users');
                 const usersData = response.data;
                 setUsers(usersData);
                 console.log('Users:', usersData);

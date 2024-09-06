@@ -71,7 +71,7 @@ function Listing() {
       }
 
       const uploadResponse = await axios.post(
-        "http://localhost:3000/upload-file",
+        "https://handcraftedberlinbackend.onrender.com/upload-file",
         formData
       );
       console.log(uploadResponse.data);
@@ -97,7 +97,7 @@ function Listing() {
         images: imageUrls,
       };
       console.log('Product data:', productData);
-      const response = await axios.post('http://localhost:3000/products', productData, {
+      const response = await axios.post('https://handcraftedberlinbackend.onrender.com/products', productData, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`

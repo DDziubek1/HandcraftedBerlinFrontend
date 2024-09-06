@@ -10,7 +10,7 @@ function AboutMe() {
         const fetchProfile = async () => {
             try {
                 const token = localStorage.getItem('token'); // Assuming the token is stored in localStorage
-                const response = await axios.get('http://localhost:3000/users/profile', {
+                const response = await axios.get('https://handcraftedberlinbackend.onrender.com/users/profile', {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     },
@@ -62,7 +62,7 @@ function AboutMe() {
 
         try {
             const uploadResponse = await axios.post(
-                "http://localhost:3000/upload-file",
+                "https://handcraftedberlinbackend.onrender.com/upload-file",
                 formData
             );
             console.log(uploadResponse.data);
@@ -85,7 +85,7 @@ function AboutMe() {
     console.log('Structured Data:', structuredData);
 
     
-        const response = await axios.put('http://localhost:3000/users', structuredData, {
+        const response = await axios.put('https://handcraftedberlinbackend.onrender.com/users', structuredData, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`

@@ -13,7 +13,7 @@ const [userData, setUserData] = useState({});
       const fetchProfile = async () => {
         try {
             const token = localStorage.getItem('token'); // Assuming the token is stored in localStorage
-            const response = await axios.get('http://localhost:3000/users/profile', {
+            const response = await axios.get('https://handcraftedberlinbackend.onrender.com/users/profile', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },
@@ -28,7 +28,7 @@ const [userData, setUserData] = useState({});
         const fetchListings = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:3000/products', {
+                const response = await axios.get('https://handcraftedberlinbackend.onrender.com/products', {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     },

@@ -22,7 +22,7 @@ function ListingDetails() {
   useEffect(() => {
     const fetchListing = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/products/${id}`);
+        const response = await axios.get(`https://handcraftedberlinbackend.onrender.com/products/${id}`);
         setListing(response.data);
         setMaterials(response.data.materials);
         setDescription(response.data.description);
@@ -34,7 +34,7 @@ function ListingDetails() {
 
     const fetchCategoryName = async (categoryId) => {
       try {
-        const response = await axios.get(`http://localhost:3000/categories/id/${categoryId}`);
+        const response = await axios.get(`https://handcraftedberlinbackend.onrender.com/categories/id/${categoryId}`);
         setCategoryName(response.data.name); // Set category name
       } catch (error) {
         console.error('Error fetching category:', error);
@@ -43,7 +43,7 @@ function ListingDetails() {
 
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/categories");
+        const response = await axios.get("https://handcraftedberlinbackend.onrender.com/categories");
         setCategories(response.data);
         const categoryName = response.data.map((category) => category.name);
         console.log("Categories:", response.data);
@@ -98,7 +98,7 @@ function ListingDetails() {
    
 
     try {
-        const response = await axios.put(`http://localhost:3000/products/${id}`, data, {
+        const response = await axios.put(`https://handcraftedberlinbackend.onrender.com/products/${id}`, data, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`

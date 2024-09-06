@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = (data) => {
         axios
-          .post("http://localhost:3000/auth/login", data)
+          .post("https://handcraftedberlinbackend.onrender.com/auth/login", data)
           .then((res) => {
             setIsLoggedIn(res.data.user);
             localStorage.setItem("token", res.data.token);
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     
       const signup = (data) => {
         axios
-          .post("http://localhost:3000/auth/signup", data)
+          .post("https://handcraftedberlinbackend.onrender.com/auth/signup", data)
           .then((res) => {})
           .catch(console.log);
       };
@@ -31,9 +31,9 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("token");
       };
     
-      useEffect(() => {
+    /*  useEffect(() => {
         axios
-          .get("http://localhost:3000/auth/me", {
+          .get("https://handcraftedberlinbackend.onrender.com/auth/me", {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
           .finally(() => {
             setLoading(false);
           });
-      }, []);
+      }, []); */
 
     
     return (

@@ -10,7 +10,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const onSubmit = (data) => {
    
-    axios.post("http://localhost:3000/auth/signup", data)
+    axios.post("https://handcraftedberlinbackend.onrender.com/auth/signup", data)
       .then((response) => {
         const token = response.data.token;
         localStorage.setItem("token", token);
